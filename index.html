@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -20,6 +22,7 @@
       --muted:    #7a7672;
       --green:    #25d366;
       --music-blue: #00d4ff;
+      --viktoria-purple: #a855f7;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -88,13 +91,44 @@
 
     .cart-badge { background: var(--gold); color: var(--ink); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
+    /* REKLAM BUTTON STİLİ (Viktoria Style) */
+    .btn-boyalar {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--viktoria-purple);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 8px 6px 8px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 0 #7c3aed, 0 6px 12px rgba(120, 40, 200, 0.35);
+      transition: all 0.15s ease;
+      margin: 10px 0 25px 0;
+    }
+    .btn-boyalar:hover {
+      box-shadow: 0 2px 0 #7c3aed, 0 4px 8px rgba(120, 40, 200, 0.35);
+      transform: translateY(2px);
+    }
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #9333ea;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-left: 12px;
+      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+    }
+
     .hero {
-      max-width: 1280px; margin: 0 auto; padding: 80px 32px 60px;
+      max-width: 1280px; margin: 0 auto; padding: 60px 32px;
       display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end;
       border-bottom: 1px solid var(--border);
     }
 
-    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(42px, 6vw, 80px); font-weight: 800; line-height: 0.95; text-transform: uppercase; }
+    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 5vw, 70px); font-weight: 800; line-height: 0.95; text-transform: uppercase; }
     .hero h1 em { color: var(--gold); font-style: normal; display: block; }
 
     main { max-width: 1280px; margin: 0 auto; padding: 60px 32px; }
@@ -119,45 +153,11 @@
 
     .add-btn { flex: 1; height: 42px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; letter-spacing: 1px; transition: 0.3s; }
 
-    /* FLOATING CONTROLS (RIGHT) */
-    .floating-controls {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 1000;
-    }
-
-    .float-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      cursor: pointer;
-      transition: 0.3s;
-      border: none;
-      text-decoration: none;
-    }
-    .float-icon:hover { transform: scale(1.1); }
-
-    .music-float { 
-      background: var(--music-blue); 
-      color: white; 
-      font-size: 24px; 
-      animation: musicPulse 2s infinite;
-    }
-
-    @keyframes musicPulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
-    }
-
+    /* FLOATING CONTROLS */
+    .floating-controls { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+    .float-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); cursor: pointer; transition: 0.3s; border: none; text-decoration: none; }
+    .music-float { background: var(--music-blue); color: white; font-size: 24px; animation: musicPulse 2s infinite; }
+    @keyframes musicPulse { 0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); } }
     .wa-float { background: var(--green); }
 
     /* SIDEBAR */
@@ -168,7 +168,13 @@
 
     .cart-body { flex: 1; overflow-y: auto; padding: 20px 28px; }
     .sidebar-footer { padding: 20px 28px 28px; border-top: 1px solid var(--border); }
+    
     .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; }
+    .clear-cart-btn { width: 100%; margin-top: 10px; padding: 10px; background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; cursor: pointer; border-radius: 2px; transition: 0.3s; }
+    .clear-cart-btn:hover { background: #ff4d4d; color: white; }
+
+    /* Sidebar Qty Input */
+    .cart-qty-input { width: 45px; background: #222; border: 1px solid var(--border); color: var(--gold); text-align: center; border-radius: 4px; padding: 2px; font-weight: bold; font-family: 'Barlow Condensed'; font-size: 16px; }
 
     @media (max-width: 768px) { #sidebar { width: 100%; } .hero { grid-template-columns: 1fr; padding: 40px 20px; } }
   </style>
@@ -188,6 +194,13 @@
 
   <section class="hero">
     <div>
+      <!-- Reklam bölməsi -->
+      <div style="font-size: 9px; color: var(--muted); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 2px;">google reklam</div>
+      <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar">
+        Viktoria Paltar Boyaları
+        <span class="btn-icon">»</span>
+      </a>
+      
       <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:20px;">PREMİUM KATALOQ — 2026</div>
       <h1>PROFESSİONAL<br><em>BOYA, DOLĞU</em> <em>LAK, ASTAR</em> MƏHSULLARI</h1>
       <p style="color:var(--muted); max-width:480px; margin-top:20px; font-weight:300;">Nelson brendinin yüksək texnologiyalı məhsulları ilə məkanlarınıza dəyər qatın.</p>
@@ -225,12 +238,12 @@
         <span style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Ümumi yekun</span>
         <span style="font-family:'Barlow Condensed'; font-size:32px; font-weight:800; color:var(--gold);"><span id="total-price">0.00</span> AZN</span>
       </div>
-      <button class="wa-order-btn" onclick="sendOrder()">WhatsApp ilə Sifariş Et</button>
+      <button class="wa-order-btn" onclick="sendOrder()">Sifarişi Tamamla</button>
+      <button class="clear-cart-btn" onclick="clearCart()">Səbəti Təmizlə</button>
     </div>
   </div>
 
   <script>
-    // Qeyd: Qiymətlər rəqəm formatında olmalıdır (məsələn: 0.00). Səhv format səhifəni dondurur.
     const products = [
       { id: 1,  name: "Nelbinder Akrilik Astar (1LT)", desc: "Səth hazırlığı üçün yüksək yapışma qabiliyyətli astar.", price: 6.00, img: "1.webp" },
       { id: 2,  name: "Nelastar Silikonlu Astar", desc: "Boya sərfiini azaldan silikonlu daxili/xarici qrunt.", price: 27.00, img: "2.webp" },
@@ -296,6 +309,21 @@
 
     function removeItem(index) { cart.splice(index, 1); updateUI(); }
 
+    function clearCart() {
+      if(confirm("Səbəti boşaltmaq istədiyinizə əminsiniz?")) {
+        cart = [];
+        updateUI();
+      }
+    }
+
+    // Səbət daxilində say dəyişmək funksiyası
+    function updateItemQty(index, newQty) {
+      let val = parseInt(newQty);
+      if(isNaN(val) || val < 1) val = 1;
+      cart[index].qty = val;
+      updateUI();
+    }
+
     function updateUI() {
       const list = document.getElementById('cart-items');
       const totalEl = document.getElementById('total-price');
@@ -309,7 +337,9 @@
           <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
             <div style="flex:1;">
               <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text);">${item.name}</div>
-              <div style="font-size:12px; color:var(--muted); margin-top:4px;">${item.qty} ədəd x ${item.price.toFixed(2)} AZN</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:4px;">
+                <input type="number" class="cart-qty-input" value="${item.qty}" onchange="updateItemQty(${i}, this.value)"> ədəd x ${item.price.toFixed(2)} AZN
+              </div>
               <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer; margin-top:8px; font-weight:700;">SİL ✕</button>
             </div>
             <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:18px;">${sum.toFixed(2)}</div>
@@ -339,22 +369,14 @@
 
     const music = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
-    
     function toggleMusic() {
-      if (music.paused) {
-        music.play();
-        musicBtn.innerText = '⏸️';
-      } else {
-        music.pause();
-        musicBtn.innerText = '🎵';
-      }
+      if (music.paused) { music.play(); musicBtn.innerText = '⏸️'; } 
+      else { music.pause(); musicBtn.innerText = '🎵'; }
     }
 
     window.addEventListener('scroll', () => {
       if (!audioInitiated) {
-        music.play().then(() => {
-          musicBtn.innerText = '⏸️';
-        }).catch(e => console.log("Səsdən öncə interaksiya lazımdır"));
+        music.play().then(() => { musicBtn.innerText = '⏸️'; }).catch(() => {});
         audioInitiated = true;
       }
     }, { once: true });
@@ -363,4 +385,3 @@
   </script>
 </body>
 </html>
-
