@@ -20,7 +20,7 @@
       --muted:    #7a7672;
       --green:    #25d366;
       --music-blue: #00d4ff;
-      --desc-color: #a5f3fc; /* Açıq firuzəyi - oxunaqlı rəng */
+      --desc-color: #a5f3fc; /* Oxunaqlı açıq firuzəyi */
       --viktoria-purple: #a855f7;
     }
 
@@ -91,7 +91,7 @@
     .cart-badge { background: var(--gold); color: var(--ink); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
     /* REKLAM SECTION */
-    .ad-section { margin-bottom: 20px; padding-top: 5px; }
+    .ad-section { margin-bottom: 15px; padding-top: 5px; text-align: left; }
     .btn-boyalar {
       display: inline-flex;
       align-items: center;
@@ -105,42 +105,47 @@
       box-shadow: 0 4px 0 #7c3aed, 0 6px 12px rgba(120, 40, 200, 0.35);
       transition: all 0.15s ease;
     }
-    .btn-icon { display: inline-flex; align-items: center; justify-content: center; background-color: #9333ea; width: 26px; height: 26px; border-radius: 50%; margin-left: 10px; box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2); }
 
     .hero {
-      max-width: 1280px; 
+      max-width: 800px; /* Tək-tək görünüş üçün mərkəzləşdirilmiş en */
       margin: 0 auto; 
       padding: 0px 32px 30px; 
-      display: grid; 
-      grid-template-columns: 1fr auto; 
-      gap: 20px; 
-      align-items: end;
       border-bottom: 1px solid var(--border);
     }
-    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(32px, 5vw, 65px); font-weight: 800; line-height: 1.1; text-transform: uppercase; }
+    .hero h1 { 
+        font-family: 'Barlow Condensed', sans-serif; 
+        font-size: clamp(32px, 5vw, 60px); 
+        font-weight: 800; 
+        line-height: 1.1; 
+        text-transform: uppercase; 
+        margin-top: 20px; /* Reklamdan sonra 0.5sm ara */
+    }
+    .hero h1 span { color: var(--gold); } /* Qızılı tonda sözlər */
 
-    main { max-width: 1280px; margin: 0 auto; padding: 30px 32px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 2px; }
+    main { max-width: 800px; margin: 0 auto; padding: 30px 32px; }
+    
+    /* TƏK-TƏK DÜZÜLÜŞ (SINGLE COLUMN) */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
 
-    /* CARD STYLE */
-    .card { background: var(--card); display: flex; flex-direction: column; position: relative; overflow: hidden; transition: 0.3s; }
-    .card-img { width: 100%; aspect-ratio: 1/1; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .card { background: var(--card); display: flex; flex-direction: column; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; }
+    .card:hover { border-color: var(--gold); background: #222; }
+    
+    .card-img { width: 100%; aspect-ratio: 1.2 / 1; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
     .card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .card-body { padding: 15px 20px 0; flex-grow: 1; }
-    .card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: var(--text); height: 48px; overflow: hidden; line-height: 1.3; }
     
-    /* Məhsul açıqlaması - Yeniləndi */
-    .card-desc { font-size: 14px; color: var(--desc-color); min-height: 38px; line-height: 1.4; font-weight: 500; }
-    
-    .card-price { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; color: var(--gold); margin-top: 10px; }
-    .card-footer { padding: 15px 20px 20px; display: flex; gap: 8px; }
+    .card-body { padding: 20px; flex-grow: 1; }
+    .card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 10px; line-height: 1.2; }
+    .card-desc { font-size: 16px; color: var(--desc-color); margin-bottom: 15px; font-weight: 500; }
+    .card-price { font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; color: var(--gold); }
 
-    /* QTY DÜYMƏLƏRİ */
+    .card-footer { padding: 0 20px 20px; display: flex; gap: 10px; }
+
+    /* QTY */
     .qty-wrap { display: flex; align-items: center; background: var(--panel); border: 1px solid var(--border); }
-    .qty-btn { width: 34px; height: 40px; border: none; background: transparent; color: var(--text); cursor: pointer; font-size: 20px; font-weight: 900; }
-    .qty-input { width: 44px; height: 40px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; font-size: 16px; }
+    .qty-btn { width: 40px; height: 45px; border: none; background: transparent; color: var(--text); cursor: pointer; font-size: 22px; font-weight: 900; }
+    .qty-input { width: 50px; height: 45px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; font-size: 18px; }
 
-    .add-btn { flex: 1; height: 40px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 12px; letter-spacing: 1px; }
+    .add-btn { flex: 1; height: 45px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 14px; letter-spacing: 1px; }
 
     /* SIDEBAR */
     #sidebar { position: fixed; top: 0; right: -100%; width: 420px; height: 100dvh; background: var(--panel); z-index: 1100; display: flex; flex-direction: column; transition: 0.45s cubic-bezier(0.77, 0, 0.175, 1); border-left: 1px solid var(--border); }
@@ -148,31 +153,31 @@
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1050; opacity: 0; pointer-events: none; transition: 0.4s; }
     .overlay.active { opacity: 1; pointer-events: all; }
 
-    .sidebar-back-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 8px 15px; font-family: 'Barlow Condensed'; font-weight: 700; cursor: pointer; letter-spacing: 1px; }
+    .sidebar-back-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 8px 15px; font-family: 'Barlow Condensed'; font-weight: 700; cursor: pointer; text-transform: uppercase; }
 
     .cart-body { flex: 1; overflow-y: auto; padding: 20px 28px; }
     .sidebar-footer { padding: 20px 28px 28px; border-top: 1px solid var(--border); }
     
     .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; }
     .clear-cart-btn { width: 100%; margin-top: 10px; padding: 10px; background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; cursor: pointer; border-radius: 2px; }
-    
-    /* Səbətdəki sil düyməsi - Yeniləndi */
-    .remove-btn-large { color: #ff4d4d; font-weight: 900; font-size: 15px; cursor: pointer; border: none; background: none; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* ƏLAQƏ VƏ FOOTER */
+    .cart-qty-input { width: 55px; background: #222; border: 1px solid var(--gold); color: var(--text); text-align: center; border-radius: 4px; padding: 5px; font-weight: bold; font-family: 'Barlow Condensed'; font-size: 20px; outline: none; }
+    .remove-btn-large { color: #ff4d4d; font-weight: 900; font-size: 16px; cursor: pointer; border: none; background: none; margin-top: 12px; text-transform: uppercase; }
+
+    /* CONTACT FOOTER */
     .contact-footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--border); margin-top: 40px; }
-    .contact-footer h3 { font-family: 'Barlow Condensed'; font-size: 24px; color: var(--gold); margin-bottom: 10px; }
-    .contact-footer .phone-link { color: var(--text); font-size: 20px; text-decoration: none; font-weight: 700; display: block; margin-top: 5px; }
+    .phone-link { color: var(--text); font-size: 22px; text-decoration: none; font-weight: 700; display: block; margin-top: 10px; }
 
     footer { padding: 30px; text-align: center; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid var(--border); }
 
-    /* FLOATING CONTROLS */
+    /* FLOAT CONTROLS */
     .floating-controls { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
     .float-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); cursor: pointer; transition: 0.3s; border: none; text-decoration: none; }
     .music-float { background: var(--music-blue); color: white; font-size: 24px; animation: musicPulse 2s infinite; }
+    @keyframes musicPulse { 0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); } }
     .wa-float { background: var(--green); }
 
-    @media (max-width: 768px) { #sidebar { width: 100%; } .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { #sidebar { width: 100%; } main, .hero { max-width: 100%; } }
   </style>
 </head>
 <body>
@@ -189,33 +194,24 @@
   </header>
 
   <section class="hero">
-    <div>
-      <div class="ad-section">
-        <div style="font-size: 9px; color: var(--music-blue); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 2px;">google reklam</div>
-        <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar">
-          Viktoria Paltar Boyaları
-          <span class="btn-icon">»</span>
-        </a>
-      </div>
-      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:5px;">PREMİUM KATALOQ — 2026</div>
-      <h1>PROFESSİONAL<br><em>BOYA, DOLĞU, LAK, ASTAR</em> MƏHSULLARI</h1>
+    <div class="ad-section">
+      <div style="font-size: 9px; color: var(--music-blue); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 2px;">google reklam</div>
+      <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar">
+        Viktoria Paltar Boyaları <span style="margin-left:10px;">»</span>
+      </a>
     </div>
-    <div class="hero-stats">
-      <div style="text-align:right;">
-        <div style="font-family:'Barlow Condensed'; font-size:40px; font-weight:800; color:var(--gold); line-height:1;">16+</div>
-        <div style="font-size:10px; color:var(--muted); text-transform:uppercase;">Məhsul növü</div>
-      </div>
-    </div>
+    
+    <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-top:10px;">PREMİUM KATALOQ — 2026</div>
+    <h1>PROFESSİONAL<br><span>BOYA, DOLĞU, LAK, ASTAR</span> MƏHSULLARI</h1>
   </section>
 
   <main>
     <div class="grid" id="product-grid"></div>
   </main>
 
-  <!-- Əlaqə Bölməsi -->
   <section class="contact-footer">
-    <h3>Daha ətraflı məlumat üçün zəng edin:</h3>
-    <a href="tel:+994517279955" class="phone-link">Rəşadət: +994 51 727 99 55</a>
+    <h3 style="font-family:'Barlow Condensed'; color:var(--gold);">ƏTRAFLI MƏLUMAT ÜÇÜN ZƏNG EDİN:</h3>
+    <a href="tel:+994517279955" class="phone-link">RƏŞADƏT: +994 51 727 99 55</a>
   </section>
 
   <footer>
@@ -226,7 +222,7 @@
 
   <div id="sidebar">
     <div style="padding:28px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-      <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
+      <div style="font-family:'Barlow Condensed'; font-size:22px; letter-spacing:2px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
       <button class="sidebar-back-btn" onclick="toggleCart(false)">← GERİ</button>
     </div>
     <div class="cart-body" id="cart-items"></div>
@@ -276,7 +272,7 @@
       products.forEach(p => {
         grid.innerHTML += `
           <div class="card">
-            <div class="card-img"><img src="${p.img}" onerror="this.src='https://placehold.co/400x400/ffffff/000000?text=Nelson'"></div>
+            <div class="card-img"><img src="${p.img}" onerror="this.src='https://via.placeholder.com/600x400/ffffff/000000?text=Nelson'"></div>
             <div class="card-body">
               <div class="card-name">${p.name}</div>
               <div class="card-desc">${p.desc}</div>
@@ -297,7 +293,7 @@
     function changeQty(id, delta, isCart = false, index = null) {
         if(isCart) {
             let newVal = (cart[index].qty || 0) + delta;
-            updateItemQty(index, newVal < 0 ? 0 : newVal);
+            updateItemQty(index, newVal < 1 ? 1 : newVal);
         } else {
             const el = document.getElementById(`qty-${id}`);
             let val = parseInt(el.value) || 1;
@@ -326,41 +322,50 @@
     }
 
     function updateItemQty(index, newQty) {
-      let val = (newQty === "") ? 0 : parseInt(newQty);
-      cart[index].qty = isNaN(val) ? 0 : val;
-      updateUI();
+      if(newQty === "") return;
+      let val = parseInt(newQty);
+      cart[index].qty = isNaN(val) ? 1 : val;
+      updateUI(false); 
     }
 
-    function updateUI() {
+    function updateUI(reRender = true) {
       const list = document.getElementById('cart-items');
       const totalEl = document.getElementById('total-price');
       const countEl = document.getElementById('cart-count');
-      
-      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted);">Səbət boşdur</div>' : '';
-      
       let total = 0, count = 0;
-      cart.forEach((item, i) => {
-        const itemSum = item.qty * item.price;
-        total += itemSum; count += item.qty;
-        list.innerHTML += `
-          <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
-            <div style="flex:1;">
-              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text); line-height:1.2;">${item.name}</div>
-              <div style="font-size:12px; color:var(--muted); margin-top:8px; display:flex; align-items:center; gap:8px;">
-                <div class="qty-wrap" style="background:#222;">
-                    <button class="qty-btn" style="width:25px; height:30px;" onclick="changeQty(null,-1, true, ${i})">−</button>
-                    <input type="number" class="qty-input" style="width:35px; height:30px; font-size:14px;" value="${item.qty}" oninput="updateItemQty(${i}, this.value)" onfocus="this.select()">
-                    <button class="qty-btn" style="width:25px; height:30px;" onclick="changeQty(null,1, true, ${i})">+</button>
+      
+      if(reRender) {
+          list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted);">Səbət boşdur</div>' : '';
+          cart.forEach((item, i) => {
+            const itemSum = item.qty * item.price;
+            total += itemSum; count += item.qty;
+            list.innerHTML += `
+              <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
+                <div style="flex:1;">
+                  <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:16px; text-transform:uppercase; color:var(--text); line-height:1.2;">${item.name}</div>
+                  <div style="font-size:13px; color:var(--muted); margin-top:10px; display:flex; align-items:center; gap:8px;">
+                    <div class="qty-wrap" style="background:#222;">
+                        <button class="qty-btn" style="width:30px; height:35px;" onclick="changeQty(null,-1, true, ${i})">−</button>
+                        <input type="number" class="cart-qty-input" value="${item.qty}" oninput="updateItemQty(${i}, this.value)" onfocus="this.select()">
+                        <button class="qty-btn" style="width:30px; height:35px;" onclick="changeQty(null,1, true, ${i})">+</button>
+                    </div>
+                    <span>x ${item.price.toFixed(2)} AZN</span>
+                  </div>
+                  <button onclick="removeItem(${i})" class="remove-btn-large">SİL ✕</button>
                 </div>
-                <span>x ${item.price.toFixed(2)} AZN</span>
-              </div>
-              <button onclick="removeItem(${i})" class="remove-btn-large">SİL ✕</button>
-            </div>
-            <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:20px;">
-                <span>${itemSum.toFixed(2)}</span>
-            </div>
-          </div>`;
-      });
+                <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:22px;">
+                    <span id="sum-${i}">${itemSum.toFixed(2)}</span>
+                </div>
+              </div>`;
+          });
+      } else {
+          cart.forEach((item, i) => {
+              const itemSum = item.qty * item.price;
+              total += itemSum; count += item.qty;
+              const sumSpan = document.getElementById(`sum-${i}`);
+              if(sumSpan) sumSpan.innerText = itemSum.toFixed(2);
+          });
+      }
       
       countEl.innerText = count;
       totalEl.innerText = total.toFixed(2);
@@ -370,6 +375,7 @@
     function toggleCart(open) {
       document.getElementById('sidebar').classList.toggle('active', open);
       document.getElementById('overlay').classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
     }
 
     function sendOrder() {
@@ -377,10 +383,8 @@
       let txt = "*YENİ SİFARİŞ — NELSON BOYA*\n\n";
       let total = 0;
       cart.forEach((it, i) => {
-        if(it.qty > 0) {
-            const s = it.price * it.qty; total += s;
-            txt += `${i+1}. *${it.name}*\n   Miqdar: ${it.qty} ədəd\n   Cəm: ${s.toFixed(2)} AZN\n\n`;
-        }
+        const s = it.price * it.qty; total += s;
+        txt += `${i+1}. *${it.name}*\n   Miqdar: ${it.qty} ədəd\n   Cəm: ${s.toFixed(2)} AZN\n\n`;
       });
       txt += `*ÜMUMİ YEKUN MƏBLƏĞ: ${total.toFixed(2)} AZN*`;
       window.open(`https://wa.me/994517279955?text=${encodeURIComponent(txt)}`, '_blank');
