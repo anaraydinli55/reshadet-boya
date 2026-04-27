@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nelson Boya - Keyfiyyətli İnşaat Boyaları və Materialları</title>
-
+  <title>Nelson Boya - Professional İnşaat Materialları</title>
   
-  <!-- Meta Tags -->
-  <meta name="description" content="Nelson Boya - Daxili və xarici divar boyaları, tavan boyaları, lak və dolğu materiallarının topan və pərakəndə satışı.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary: #9b59b6; /* Bənövşəyi */
-      --secondary: #27ae60; /* Yaşıl */
+      --primary: #9b59b6;
+      --secondary: #27ae60;
       --dark: #0f172a;
       --card-bg: #1e293b;
       --text: #f8fafc;
@@ -28,14 +25,12 @@
       background-color: var(--dark);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     h1, h2, h3, .logo { font-family: 'Architects Daughter', cursive; }
 
-    /* Header */
     header {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(10px);
       padding: 15px 0;
       position: sticky;
@@ -53,7 +48,7 @@
       align-items: center;
     }
 
-    .logo { font-size: 28px; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo { font-size: 28px; color: var(--primary); text-decoration: none; }
 
     .cart-btn {
       background: var(--primary);
@@ -66,17 +61,13 @@
       gap: 10px;
       transition: 0.3s;
     }
-    .cart-btn:hover { background: var(--secondary); transform: scale(1.05); }
     #cart-count { background: white; color: var(--primary); padding: 2px 8px; border-radius: 50%; font-size: 12px; }
 
-    /* Main Section */
     main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
     
     .hero { text-align: center; margin-bottom: 50px; }
-    .hero h1 { font-size: 45px; color: var(--primary); margin-bottom: 15px; }
-    .hero p { color: var(--gray); font-size: 18px; max-width: 700px; margin: 0 auto; }
+    .hero h1 { font-size: 40px; color: var(--primary); margin-bottom: 10px; }
 
-    /* Product Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -89,75 +80,39 @@
       overflow: hidden;
       border: 1px solid #334155;
       transition: 0.4s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); }
-
-    .img-box { width: 100%; height: 260px; overflow: hidden; background: white; }
-    .img-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px; transition: 0.5s; }
-    .card:hover .img-box img { transform: scale(1.1); }
-
-    .info { padding: 20px; flex-grow: 1; text-align: center; }
-    .info h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
-    .info p { color: var(--gray); font-size: 13px; margin-bottom: 15px; min-height: 40px; }
-    .price { font-size: 22px; font-weight: bold; color: var(--secondary); margin-bottom: 20px; }
-
-    /* Controls */
-    .controls { display: flex; gap: 10px; padding: 0 20px 20px; }
-    .qty-input { width: 70px; padding: 12px; border-radius: 10px; border: none; background: #0f172a; color: white; text-align: center; font-weight: bold; }
-    .add-btn {
-      flex: 1;
-      padding: 12px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .add-btn:hover { background: var(--secondary); }
-
-    /* Cart Sidebar */
-    #sidebar {
-      position: fixed; top: 0; right: -100%; width: 380px; height: 100%;
-      background: #0f172a; z-index: 2000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 30px; box-shadow: -10px 0 30px rgba(0,0,0,0.5);
       display: flex; flex-direction: column;
     }
-    #sidebar.active { right: 0; }
-    
-    .sidebar-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 20px; }
-    .close-btn { cursor: pointer; font-size: 32px; color: var(--gray); }
-    
-    .items-list { flex-grow: 1; overflow-y: auto; margin: 20px 0; }
-    .item { display: flex; flex-direction: column; padding: 15px 0; border-bottom: 1px solid #1e293b; }
-    
-    .total-area { border-top: 2px solid var(--primary); padding-top: 20px; }
-    .total-line { display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; margin-bottom: 20px; }
-    
-    .whatsapp-order {
-      width: 100%; padding: 18px; background: var(--secondary); color: white; border: none;
-      border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
+
+    .card:hover { transform: translateY(-8px); border-color: var(--primary); }
+
+    .img-box { width: 100%; height: 280px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 10px; }
+
+    .info { padding: 20px; flex-grow: 1; text-align: center; }
+    .info h3 { color: var(--primary); font-size: 19px; margin-bottom: 10px; }
+    .info p { color: var(--gray); font-size: 13px; margin-bottom: 15px; min-height: 40px; }
+    .price { font-size: 22px; font-weight: bold; color: var(--secondary); margin-bottom: 15px; }
+
+    .controls { display: flex; gap: 10px; padding: 0 15px 20px; }
+    .qty-input { width: 65px; padding: 10px; border-radius: 8px; border: none; background: #0f172a; color: white; text-align: center; font-weight: bold; }
+    .add-btn { flex: 1; padding: 10px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+    /* Səbət Sidebar */
+    #sidebar {
+      position: fixed; top: 0; right: -100%; width: 380px; height: 100%;
+      background: #0f172a; z-index: 2000; transition: 0.4s; padding: 30px;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.5); display: flex; flex-direction: column;
     }
+    #sidebar.active { right: 0; }
+    .items-list { flex-grow: 1; overflow-y: auto; margin: 20px 0; }
+    .item { padding: 12px 0; border-bottom: 1px solid #1e293b; }
+    .total-area { border-top: 2px solid var(--primary); padding-top: 20px; }
+    .whatsapp-order { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
 
     /* WhatsApp Float */
-    .wa-float {
-      position: fixed; bottom: 30px; left: 30px;
-      background: #25d366; width: 65px; height: 65px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000;
-      transition: 0.3s;
-    }
-    .wa-float:hover { transform: translateY(-5px) scale(1.1); }
+    .wa-float { position: fixed; bottom: 30px; left: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000; }
 
-    @media (max-width: 480px) {
-      #sidebar { width: 100%; }
-      .hero h1 { font-size: 32px; }
-    }
+    @media (max-width: 480px) { #sidebar { width: 100%; } }
   </style>
 </head>
 <body>
@@ -165,77 +120,65 @@
   <header>
     <div class="header-container">
       <a href="#" class="logo">🌿 Nelson Boya</a>
-      <div class="cart-btn" onclick="toggleCart()">
-        Səbət <span id="cart-count">0</span>
-      </div>
+      <div class="cart-btn" onclick="toggleCart()">Səbət <span id="cart-count">0</span></div>
     </div>
   </header>
 
   <a href="https://wa.me/994517279955" class="wa-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
   </a>
 
   <main>
-    <section class="hero">
-      <h1>Keyfiyyətli Boya Məhsulları</h1>
-      <p>Binaların daxili və xarici divarları üçün professional Nelson həlləri. Laklar, boyalar və dolğu materialları.</p>
-    </section>
-
+    <div class="hero">
+      <h1>Nelson Professional Boyalar</h1>
+      <p>Daxili və xarici divarlar üçün yüksək keyfiyyətli inşaat materialları</p>
+    </div>
     <div class="grid" id="product-grid"></div>
   </main>
 
-  <!-- Sidebar Səbət -->
   <div id="sidebar">
-    <div class="sidebar-header">
-      <h3>🛒 Səbətiniz</h3>
-      <span class="close-btn" onclick="toggleCart()">&times;</span>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h3>🛒 Səbət</h3>
+      <span onclick="toggleCart()" style="cursor:pointer; font-size:32px;">&times;</span>
     </div>
-    
-    <div class="items-list" id="cart-items">
-      <!-- Məhsullar bura əlavə olunur -->
-    </div>
-
+    <div class="items-list" id="cart-items"></div>
     <div class="total-area">
-      <div class="total-line">
-        <span>Ümumi Cəm:</span>
-        <span id="total-price">0.00 AZN</span>
+      <div style="display:flex; justify-content:space-between; font-size:20px; font-weight:bold; margin-bottom:20px;">
+        <span>Cəmi:</span> <span id="total-price">0.00 AZN</span>
       </div>
-      <button class="whatsapp-order" onclick="sendOrder()">
-        WhatsApp ilə Sifariş Et
-      </button>
+      <button class="whatsapp-order" onclick="sendOrder()">WhatsApp ilə Sifariş Et</button>
     </div>
   </div>
 
   <script>
-    // Məhsul siyahısı (Şəkillərin analizi əsasında)
+    // Şəkillərin analizinə əsasən Nelson məhsulları (1.webp - 16.webp)
     const products = [
-      { id: 1, name: "Nelsilikon Fasad Boyası", desc: "Yüksək örtücülüyə malik silikonlu xarici divar boyası (25kq).", price: 88.00, img: "1.webp" },
-      { id: 2, name: "Nelgloss Parlak Boya", desc: "Premium parlaqlıq verən, metal və taxta üçün dekorativ boya.", price: 16.50, img: "2.webp" },
-      { id: 3, name: "Nelson Akrilik Macunu", desc: "Səthi hamarlaşdıran və çatları dolduran akrilik dolğu materialı.", price: 23.00, img: "3.webp" },
-      { id: 4, name: "Nelsilikon (Orta Ölçü)", desc: "Xarici fasadlar üçün atmosferə davamlı silikonlu boya (15L).", price: 62.00, img: "4.webp" },
-      { id: 5, name: "Nelplastik Divar Boyası", desc: "İnteryer üçün tənəffüs edən, mat plastik boya qrupu.", price: 44.00, img: "5.webp" },
-      { id: 6, name: "Nelakril Xarici Divar", desc: "Günəşə və nəmişliyə davamlı akrilik əsaslı fasad boyası.", price: 56.00, img: "6.webp" },
-      { id: 7, name: "Nelplus Yuyulan Boya", desc: "Ləkə saxlamayan, asan silinən daxili divar boyası (Premium).", price: 72.00, img: "7.webp" },
-      { id: 8, name: "Neltavan Tavan Boyası", desc: "Tavanlar üçün xüsusi hazırlanmış yüksək bəyazlıqlı boya.", price: 28.00, img: "8.webp" },
-      { id: 9, name: "Sintetik Antipas Boya", desc: "Metalları pasdan qoruyan antikorroziv astar qatı.", price: 12.00, img: "9.webp" },
-      { id: 10, name: "Parlak Parket Laki", desc: "Taxta döşəmələr üçün cızılmayan yüksək parlaqlı lak.", price: 19.50, img: "10.webp" },
-      { id: 11, name: "Nel Gloss Enamel", desc: "Həm daxili, həm xarici səthlər üçün sintetik parlaq boya.", price: 15.00, img: "11.webp" },
-      { id: 12, name: "Sellülozik Dolğu Laki", desc: "Məsamələri dolduran, tez quruyan professional dolğu lakı.", price: 21.00, img: "12.webp" },
-      { id: 13, name: "Antipas Qruntovka", desc: "Metal konstruksiyalar üçün sink tərkibli astar qrunt.", price: 9.00, img: "13.webp" },
-      { id: 14, name: "Nel Sintetik Parlak", desc: "Dayanıqlı parlaq qat yaradan sintetik əsaslı enamel.", price: 14.00, img: "14.webp" },
-      { id: 15, name: "Nelastar Silikonlu Astar", desc: "Boya sərfiini azaldan, yapışmanı artıran silikonlu astar.", price: 39.00, img: "15.webp" },
-      { id: 16, name: "Nelbinder Akrilik Astar", desc: "Qopmaların qarşısını alan şəffaf akrilik binder/qrunt.", price: 10.00, img: "16.webp" }
+      { id: 1, name: "Nelsilikon Fasad (25kq)", desc: "Silikon əsaslı yüksək keyfiyyətli xarici divar boyası.", price: 88.00, img: "1.webp" },
+      { id: 2, name: "Nelgloss Parlaq Boya", desc: "Metal və taxta üçün parlaqlığını itirməyən boya.", price: 16.50, img: "2.webp" },
+      { id: 3, name: "Nelson Akrilik Macunu", desc: "Səthdəki çatları dolduran akrilik dolğu.", price: 22.00, img: "3.webp" },
+      { id: 4, name: "Nelsilikon (15L)", desc: "Xarici fasadlar üçün silikonlu fasad boyası.", price: 62.00, img: "4.webp" },
+      { id: 5, name: "Nelplastik Divar Boyası", desc: "Daxili divarlar üçün mat plastik boya.", price: 44.00, img: "5.webp" },
+      { id: 6, name: "Nelakril Xarici Fasad", desc: "Atmosfer şəraitinə davamlı akrilik boya.", price: 55.00, img: "6.webp" },
+      { id: 7, name: "Nelplus Yuyulan Boya", desc: "Silikonlu, tam silinə bilən daxili divar boyası.", price: 72.00, img: "7.webp" },
+      { id: 8, name: "Neltavan Tavan Boyası", desc: "Tavanlar üçün yüksək bəyazlıqlı mat boya.", price: 29.00, img: "8.webp" },
+      { id: 9, name: "Sintetik Antipas Boya", desc: "Paslanmaya qarşı qoruyucu metal astarı.", price: 12.00, img: "9.webp" },
+      { id: 10, name: "Parlak Parket Laki", desc: "Taxta və parket üçün cızılmaya davamlı lak.", price: 19.50, img: "10.webp" },
+      { id: 11, name: "Nel Gloss Enamel", desc: "Parlaq görünüşlü professional sintetik boya.", price: 15.00, img: "11.webp" },
+      { id: 12, name: "Sellülozik Dolğu Laki", desc: "Məsamələri dolduran tez quruyan taxta lakı.", price: 21.00, img: "12.webp" },
+      { id: 13, name: "Antipas Qruntovka", desc: "Metallar üçün pas əleyhinə sintetik qrunt.", price: 9.00, img: "13.webp" },
+      { id: 14, name: "Nel Sintetik Parlak", desc: "Sintetik əsaslı yüksək parlaqlı enamel boya.", price: 14.50, img: "14.webp" },
+      { id: 15, name: "Nelastar Silikonlu Astar", desc: "Boya sərfiini azaldan silikonlu daxili/xarici astar.", price: 38.00, img: "15.webp" },
+      { id: 16, name: "Nelbinder Akrilik Astar", desc: "Şəffaf konsentrat akrilik binder astar.", price: 10.00, img: "16.webp" }
     ];
 
-    let cart = JSON.parse(localStorage.getItem('nelson_order_cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('nelson_store_cart')) || [];
 
-    // Məhsulları ekrana çıxarmaq
-    function displayProducts() {
+    function render() {
       const grid = document.getElementById('product-grid');
       products.forEach(p => {
         grid.innerHTML += `
           <div class="card">
-            <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
+            <div class="img-box"><img src="${p.img}" onerror="this.src='https://via.placeholder.com/280x280?text=Nelson+Boya'"></div>
             <div class="info">
               <h3>${p.name}</h3>
               <p>${p.desc}</p>
@@ -245,97 +188,59 @@
               <input type="number" id="qty-${p.id}" value="1" min="1" class="qty-input">
               <button class="add-btn" onclick="addToCart(${p.id})">Səbətə at</button>
             </div>
-          </div>
-        `;
+          </div>`;
       });
     }
 
     function addToCart(pid) {
-      const product = products.find(p => p.id === pid);
+      const p = products.find(x => x.id === pid);
       const qty = parseInt(document.getElementById(`qty-${pid}`).value);
-      
-      const found = cart.find(item => item.id === pid);
-      if(found) {
-        found.qty += qty;
-      } else {
-        cart.push({...product, qty: qty});
-      }
-      
-      updateCart();
-      if(window.innerWidth > 768) toggleCart(true); // Mobildə avtomatik açmasın
+      const found = cart.find(x => x.id === pid);
+      if(found) found.qty += qty; else cart.push({...p, qty});
+      update();
+      toggleCart(true);
     }
 
-    function removeItem(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
+    function removeItem(i) { cart.splice(i, 1); update(); }
 
-    function updateCart() {
-      const listEl = document.getElementById('cart-items');
-      const countEl = document.getElementById('cart-count');
+    function update() {
+      const list = document.getElementById('cart-items');
       const totalEl = document.getElementById('total-price');
-      
-      listEl.innerHTML = '';
-      let total = 0;
-      let count = 0;
-
-      cart.forEach((item, index) => {
-        const itemTotal = item.price * item.qty;
-        total += itemTotal;
-        count += item.qty;
-        
-        listEl.innerHTML += `
-          <div class="item">
-            <div style="font-weight:bold; color:var(--primary);">${item.name}</div>
-            <div style="display:flex; justify-content:space-between; font-size:14px; margin-top:5px;">
-              <span>${item.qty} ədəd x ${item.price.toFixed(2)} AZN</span>
-              <span style="font-weight:bold; color:var(--secondary);">${itemTotal.toFixed(2)} AZN</span>
-            </div>
-            <span style="color:#ef4444; cursor:pointer; font-size:12px; margin-top:8px; align-self:flex-end;" onclick="removeItem(${index})">Sil 🗑️</span>
+      list.innerHTML = ''; let total = 0; let count = 0;
+      cart.forEach((item, i) => {
+        let sum = item.price * item.qty; total += sum; count += item.qty;
+        list.innerHTML += `<div class="item">
+          <b>${item.name}</b>
+          <div style="display:flex; justify-content:space-between; font-size:14px; margin-top:5px;">
+            <span>${item.qty} ədəd x ${item.price.toFixed(2)} AZN</span>
+            <span>${sum.toFixed(2)} AZN</span>
           </div>
-        `;
+          <span style="color:#ff4d4d; cursor:pointer; font-size:12px; margin-top:5px;" onclick="removeItem(${i})">Sil 🗑️</span>
+        </div>`;
       });
-
-      countEl.innerText = count;
+      document.getElementById('cart-count').innerText = count;
       totalEl.innerText = total.toFixed(2) + " AZN";
-      localStorage.setItem('nelson_order_cart', JSON.stringify(cart));
+      localStorage.setItem('nelson_store_cart', JSON.stringify(cart));
     }
 
-    function toggleCart(forceOpen = null) {
-      const sidebar = document.getElementById('sidebar');
-      if(forceOpen === true) sidebar.classList.add('active');
-      else if(forceOpen === false) sidebar.classList.remove('active');
-      else sidebar.classList.toggle('active');
+    function toggleCart(s) {
+      const b = document.getElementById('sidebar');
+      if(s === true) b.classList.add('active'); else if(s === false) b.classList.remove('active'); else b.classList.toggle('active');
     }
 
     function sendOrder() {
-      if(cart.length === 0) {
-        alert("Səbətiniz boşdur!");
-        return;
-      }
-
-      let orderText = "*YENİ SİFARİŞ (Nelson Boya)*\n\n";
-      let grandTotal = 0;
-
-      cart.forEach((item, index) => {
-        let lineTotal = item.price * item.qty;
-        grandTotal += lineTotal;
-        orderText += `${index + 1}. *${item.name}*\n   ${item.qty} ədəd x ${item.price.toFixed(2)} AZN = *${lineTotal.toFixed(2)} AZN*\n\n`;
+      if(!cart.length) return alert("Səbət boşdur!");
+      let txt = "*YENİ SİFARİŞ (Nelson-Boya)*\n\n";
+      let total = 0;
+      cart.forEach((it, i) => {
+        let s = it.price * it.qty; total += s;
+        txt += `${i+1}. *${it.name}*\n   Miqdar: ${it.qty} ədəd\n   Məbləğ: ${s.toFixed(2)} AZN\n\n`;
       });
-
-      orderText += `--------------------------\n`;
-      orderText += `*ÜMUMİ YEKUN MƏBLƏĞ: ${grandTotal.toFixed(2)} AZN*`;
-
-      const whatsappLink = `https://wa.me/994517279955?text=${encodeURIComponent(orderText)}`;
-      window.open(whatsappLink, '_blank');
+      txt += `*ÜMUMİ CƏM: ${total.toFixed(2)} AZN*`;
+      window.open(`https://wa.me/994517279955?text=${encodeURIComponent(txt)}`, '_blank');
     }
 
-    // Başlanğıc
-    window.onload = () => {
-      displayProducts();
-      updateCart();
-    };
+    window.onload = () => { render(); update(); };
   </script>
-
 </body>
 </html>
