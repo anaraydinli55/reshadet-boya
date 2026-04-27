@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -20,7 +21,7 @@
       --muted:    #7a7672;
       --green:    #25d366;
       --music-blue: #00d4ff;
-      --desc-color: #a5f3fc; /* Oxunaqlı açıq firuzəyi */
+      --desc-color: #a5f3fc; 
       --viktoria-purple: #a855f7;
     }
 
@@ -35,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* GRAIN OVERLAY */
     body::before {
       content: '';
       position: fixed;
@@ -90,7 +90,6 @@
 
     .cart-badge { background: var(--gold); color: var(--ink); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
-    /* REKLAM SECTION */
     .ad-section { margin-bottom: 15px; padding-top: 5px; text-align: left; }
     .btn-boyalar {
       display: inline-flex;
@@ -107,7 +106,7 @@
     }
 
     .hero {
-      max-width: 800px; /* Tək-tək görünüş üçün mərkəzləşdirilmiş en */
+      max-width: 800px; 
       margin: 0 auto; 
       padding: 0px 32px 30px; 
       border-bottom: 1px solid var(--border);
@@ -118,13 +117,12 @@
         font-weight: 800; 
         line-height: 1.1; 
         text-transform: uppercase; 
-        margin-top: 20px; /* Reklamdan sonra 0.5sm ara */
+        margin-top: 20px;
     }
-    .hero h1 span { color: var(--gold); } /* Qızılı tonda sözlər */
+    .hero h1 span { color: var(--gold); } 
 
     main { max-width: 800px; margin: 0 auto; padding: 30px 32px; }
     
-    /* TƏK-TƏK DÜZÜLÜŞ (SINGLE COLUMN) */
     .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
 
     .card { background: var(--card); display: flex; flex-direction: column; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; }
@@ -140,14 +138,12 @@
 
     .card-footer { padding: 0 20px 20px; display: flex; gap: 10px; }
 
-    /* QTY */
     .qty-wrap { display: flex; align-items: center; background: var(--panel); border: 1px solid var(--border); }
     .qty-btn { width: 40px; height: 45px; border: none; background: transparent; color: var(--text); cursor: pointer; font-size: 22px; font-weight: 900; }
     .qty-input { width: 50px; height: 45px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; font-size: 18px; }
 
     .add-btn { flex: 1; height: 45px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 14px; letter-spacing: 1px; }
 
-    /* SIDEBAR */
     #sidebar { position: fixed; top: 0; right: -100%; width: 420px; height: 100dvh; background: var(--panel); z-index: 1100; display: flex; flex-direction: column; transition: 0.45s cubic-bezier(0.77, 0, 0.175, 1); border-left: 1px solid var(--border); }
     #sidebar.active { right: 0; }
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1050; opacity: 0; pointer-events: none; transition: 0.4s; }
@@ -164,13 +160,20 @@
     .cart-qty-input { width: 55px; background: #222; border: 1px solid var(--gold); color: var(--text); text-align: center; border-radius: 4px; padding: 5px; font-weight: bold; font-family: 'Barlow Condensed'; font-size: 20px; outline: none; }
     .remove-btn-large { color: #ff4d4d; font-weight: 900; font-size: 16px; cursor: pointer; border: none; background: none; margin-top: 12px; text-transform: uppercase; }
 
-    /* CONTACT FOOTER */
+    /* Səbətdəki vahid qiymət stili (YENİLƏNDİ) */
+    .cart-unit-price {
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+        margin-left: 5px;
+    }
+
     .contact-footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--border); margin-top: 40px; }
     .phone-link { color: var(--text); font-size: 22px; text-decoration: none; font-weight: 700; display: block; margin-top: 10px; }
 
     footer { padding: 30px; text-align: center; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid var(--border); }
 
-    /* FLOAT CONTROLS */
     .floating-controls { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
     .float-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); cursor: pointer; transition: 0.3s; border: none; text-decoration: none; }
     .music-float { background: var(--music-blue); color: white; font-size: 24px; animation: musicPulse 2s infinite; }
@@ -210,8 +213,8 @@
   </main>
 
   <section class="contact-footer">
-    <h3 style="font-family:'Barlow Condensed'; color:var(--gold);">ƏTRAFLI MƏLUMAT ÜÇÜN ZƏNG EDİN:</h3>
-    <a href="tel:+994517279955" class="phone-link">RƏŞADƏT: +994 51 727 99 55</a>
+    <h3 style="font-family:'Barlow Condensed'; color:var(--gold);">DAHA ƏTRAFLI MƏLUMAT ÜÇÜN ZƏNG EDİN:</h3>
+    <a href="tel:+994517279955" class="phone-link">RƏŞADƏT: 051 727 99 55</a>
   </section>
 
   <footer>
@@ -239,7 +242,7 @@
   <div class="floating-controls">
     <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()">🎵</button>
     <a href="https://wa.me/994517279955" class="float-icon wa-float" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32" alt="WA">
     </a>
   </div>
 
@@ -346,10 +349,10 @@
                   <div style="font-size:13px; color:var(--muted); margin-top:10px; display:flex; align-items:center; gap:8px;">
                     <div class="qty-wrap" style="background:#222;">
                         <button class="qty-btn" style="width:30px; height:35px;" onclick="changeQty(null,-1, true, ${i})">−</button>
-                        <input type="number" class="cart-qty-input" value="${item.qty}" oninput="updateItemQty(${i}, this.value)" onfocus="this.select()">
+                        <input type="number" class="qty-input" style="width:35px; height:35px; font-size:14px;" value="${item.qty}" oninput="updateItemQty(${i}, this.value)" onfocus="this.select()">
                         <button class="qty-btn" style="width:30px; height:35px;" onclick="changeQty(null,1, true, ${i})">+</button>
                     </div>
-                    <span>x ${item.price.toFixed(2)} AZN</span>
+                    <span class="cart-unit-price">x ${item.price.toFixed(2)} AZN</span>
                   </div>
                   <button onclick="removeItem(${i})" class="remove-btn-large">SİL ✕</button>
                 </div>
