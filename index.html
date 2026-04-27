@@ -20,6 +20,7 @@
       --muted:    #7a7672;
       --green:    #25d366;
       --music-blue: #00d4ff;
+      --desc-color: #a5f3fc; /* Açıq firuzəyi - oxunaqlı rəng */
       --viktoria-purple: #a855f7;
     }
 
@@ -58,7 +59,7 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 32px;
-      height: 65px; /* Daha dar header */
+      height: 65px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,11 +91,7 @@
     .cart-badge { background: var(--gold); color: var(--ink); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
     /* REKLAM SECTION */
-    .ad-section {
-        margin-bottom: 20px; /* Sizin istədiyiniz 0.5sm ara */
-        padding-top: 5px;
-    }
-
+    .ad-section { margin-bottom: 20px; padding-top: 5px; }
     .btn-boyalar {
       display: inline-flex;
       align-items: center;
@@ -107,17 +104,8 @@
       border-radius: 50px;
       box-shadow: 0 4px 0 #7c3aed, 0 6px 12px rgba(120, 40, 200, 0.35);
       transition: all 0.15s ease;
-      margin-top: 2px;
     }
-    .btn-boyalar:hover {
-      box-shadow: 0 2px 0 #7c3aed, 0 4px 8px rgba(120, 40, 200, 0.35);
-      transform: translateY(2px);
-    }
-    .btn-icon {
-      display: inline-flex; align-items: center; justify-content: center; background-color: #9333ea;
-      width: 26px; height: 26px; border-radius: 50%; margin-left: 10px;
-      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
-    }
+    .btn-icon { display: inline-flex; align-items: center; justify-content: center; background-color: #9333ea; width: 26px; height: 26px; border-radius: 50%; margin-left: 10px; box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2); }
 
     .hero {
       max-width: 1280px; 
@@ -129,37 +117,28 @@
       align-items: end;
       border-bottom: 1px solid var(--border);
     }
-
-    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(32px, 5vw, 65px); font-weight: 800; line-height: 1; text-transform: uppercase; margin-top: 5px; }
+    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(32px, 5vw, 65px); font-weight: 800; line-height: 1.1; text-transform: uppercase; }
 
     main { max-width: 1280px; margin: 0 auto; padding: 30px 32px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 2px; }
 
-    /* CARD DÜZƏLİŞİ */
+    /* CARD STYLE */
     .card { background: var(--card); display: flex; flex-direction: column; position: relative; overflow: hidden; transition: 0.3s; }
-    .card-name { 
-        font-family: 'Barlow Condensed', sans-serif; 
-        font-size: 18px; 
-        font-weight: 700; 
-        text-transform: uppercase; 
-        margin-bottom: 8px; 
-        color: var(--text); 
-        height: 48px; /* Sətir hündürlüyü artırıldı */
-        overflow: hidden; 
-        line-height: 1.3; /* Yazı kəsilməsin deyə */
-        padding-top: 2px; 
-    }
-
     .card-img { width: 100%; aspect-ratio: 1/1; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
     .card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
     .card-body { padding: 15px 20px 0; flex-grow: 1; }
-    .card-desc { font-size: 12px; color: var(--muted); min-height: 38px; line-height: 1.4; }
+    .card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: var(--text); height: 48px; overflow: hidden; line-height: 1.3; }
+    
+    /* Məhsul açıqlaması - Yeniləndi */
+    .card-desc { font-size: 14px; color: var(--desc-color); min-height: 38px; line-height: 1.4; font-weight: 500; }
+    
     .card-price { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; color: var(--gold); margin-top: 10px; }
     .card-footer { padding: 15px 20px 20px; display: flex; gap: 8px; }
 
+    /* QTY DÜYMƏLƏRİ */
     .qty-wrap { display: flex; align-items: center; background: var(--panel); border: 1px solid var(--border); }
-    .qty-btn { width: 34px; height: 40px; border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; }
-    .qty-input { width: 44px; height: 40px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; }
+    .qty-btn { width: 34px; height: 40px; border: none; background: transparent; color: var(--text); cursor: pointer; font-size: 20px; font-weight: 900; }
+    .qty-input { width: 44px; height: 40px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; font-size: 16px; }
 
     .add-btn { flex: 1; height: 40px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 12px; letter-spacing: 1px; }
 
@@ -169,26 +148,23 @@
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1050; opacity: 0; pointer-events: none; transition: 0.4s; }
     .overlay.active { opacity: 1; pointer-events: all; }
 
+    .sidebar-back-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 8px 15px; font-family: 'Barlow Condensed'; font-weight: 700; cursor: pointer; letter-spacing: 1px; }
+
     .cart-body { flex: 1; overflow-y: auto; padding: 20px 28px; }
     .sidebar-footer { padding: 20px 28px 28px; border-top: 1px solid var(--border); }
     
     .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; }
     .clear-cart-btn { width: 100%; margin-top: 10px; padding: 10px; background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; cursor: pointer; border-radius: 2px; }
     
-    /* SEBET INPUT */
-    .cart-qty-input { 
-        width: 55px; 
-        background: #222; 
-        border: 1px solid var(--gold); 
-        color: var(--text); 
-        text-align: center; 
-        border-radius: 4px; 
-        padding: 5px; 
-        font-weight: bold; 
-        font-family: 'Barlow Condensed'; 
-        font-size: 18px; 
-        outline: none;
-    }
+    /* Səbətdəki sil düyməsi - Yeniləndi */
+    .remove-btn-large { color: #ff4d4d; font-weight: 900; font-size: 15px; cursor: pointer; border: none; background: none; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ƏLAQƏ VƏ FOOTER */
+    .contact-footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--border); margin-top: 40px; }
+    .contact-footer h3 { font-family: 'Barlow Condensed'; font-size: 24px; color: var(--gold); margin-bottom: 10px; }
+    .contact-footer .phone-link { color: var(--text); font-size: 20px; text-decoration: none; font-weight: 700; display: block; margin-top: 5px; }
+
+    footer { padding: 30px; text-align: center; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid var(--border); }
 
     /* FLOATING CONTROLS */
     .floating-controls { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
@@ -196,10 +172,7 @@
     .music-float { background: var(--music-blue); color: white; font-size: 24px; animation: musicPulse 2s infinite; }
     .wa-float { background: var(--green); }
 
-    @media (max-width: 768px) { 
-        #sidebar { width: 100%; } 
-        .hero { grid-template-columns: 1fr; padding: 0 20px 20px; gap: 10px; } 
-    }
+    @media (max-width: 768px) { #sidebar { width: 100%; } .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -218,20 +191,19 @@
   <section class="hero">
     <div>
       <div class="ad-section">
-        <div style="font-size: 9px; color: var(--music-blue); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 0px;">google reklam</div>
+        <div style="font-size: 9px; color: var(--music-blue); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 2px;">google reklam</div>
         <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar">
           Viktoria Paltar Boyaları
           <span class="btn-icon">»</span>
         </a>
       </div>
-      
       <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:5px;">PREMİUM KATALOQ — 2026</div>
-      <h1>PROFESSİONAL<br><em>BOYA, DOLĞU</em> <em>LAK, ASTAR</em> MƏHSULLARI</h1>
+      <h1>PROFESSİONAL<br><em>BOYA, DOLĞU, LAK, ASTAR</em> MƏHSULLARI</h1>
     </div>
     <div class="hero-stats">
       <div style="text-align:right;">
         <div style="font-family:'Barlow Condensed'; font-size:40px; font-weight:800; color:var(--gold); line-height:1;">16+</div>
-        <div style="font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:1px;">Məhsul növü</div>
+        <div style="font-size:10px; color:var(--muted); text-transform:uppercase;">Məhsul növü</div>
       </div>
     </div>
   </section>
@@ -240,30 +212,39 @@
     <div class="grid" id="product-grid"></div>
   </main>
 
-  <div class="floating-controls">
-    <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()" title="Musiqi">🎵</button>
-    <a href="https://wa.me/994517279955?text=Salam!%20Nelson%20boya%20məhsulları%20ilə%20bağlı%20sifariş%20vermək%20istəyirəm." 
-       class="float-icon wa-float" target="_blank" title="WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32" alt="WA">
-    </a>
-  </div>
+  <!-- Əlaqə Bölməsi -->
+  <section class="contact-footer">
+    <h3>Daha ətraflı məlumat üçün zəng edin:</h3>
+    <a href="tel:+994517279955" class="phone-link">Rəşadət: +994 51 727 99 55</a>
+  </section>
+
+  <footer>
+    Nelson Boya 2026. Bütün hüquqlar qorunur.
+  </footer>
 
   <div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
 
   <div id="sidebar">
     <div style="padding:28px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
       <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
-      <button onclick="toggleCart(false)" style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
+      <button class="sidebar-back-btn" onclick="toggleCart(false)">← GERİ</button>
     </div>
     <div class="cart-body" id="cart-items"></div>
     <div class="sidebar-footer">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <span style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Ümumi yekun</span>
+        <span style="font-size:11px; color:var(--muted); text-transform:uppercase;">Ümumi yekun</span>
         <span style="font-family:'Barlow Condensed'; font-size:32px; font-weight:800; color:var(--gold);"><span id="total-price">0.00</span> AZN</span>
       </div>
       <button class="wa-order-btn" onclick="sendOrder()">Sifarişi Tamamla</button>
       <button class="clear-cart-btn" onclick="clearCart()">Səbəti Təmizlə</button>
     </div>
+  </div>
+
+  <div class="floating-controls">
+    <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()">🎵</button>
+    <a href="https://wa.me/994517279955" class="float-icon wa-float" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32">
+    </a>
   </div>
 
   <script>
@@ -304,7 +285,7 @@
             <div class="card-footer">
               <div class="qty-wrap">
                 <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
-                <input type="number" class="qty-input" id="qty-${p.id}" value="1" min="1" onclick="this.select()">
+                <input type="number" class="qty-input" id="qty-${p.id}" value="1" min="1" onfocus="this.select()">
                 <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
               </div>
               <button class="add-btn" onclick="addToCart(${p.id})">Səbətə at</button>
@@ -313,10 +294,15 @@
       });
     }
 
-    function changeQty(id, delta) {
-      const el = document.getElementById(`qty-${id}`);
-      let val = parseInt(el.value) || 1;
-      el.value = Math.max(1, val + delta);
+    function changeQty(id, delta, isCart = false, index = null) {
+        if(isCart) {
+            let newVal = (cart[index].qty || 0) + delta;
+            updateItemQty(index, newVal < 0 ? 0 : newVal);
+        } else {
+            const el = document.getElementById(`qty-${id}`);
+            let val = parseInt(el.value) || 1;
+            el.value = Math.max(1, val + delta);
+        }
     }
 
     function addToCart(pid) {
@@ -340,57 +326,45 @@
     }
 
     function updateItemQty(index, newQty) {
-      // Input silinəndə (boş olanda) cəmi 0 göstərməsi üçün
-      if(newQty === "") {
-        cart[index].qty = 0;
-      } else {
-        let val = parseInt(newQty);
-        cart[index].qty = isNaN(val) ? 0 : val;
-      }
-      
-      // Anlıq məbləğləri ekranda yeniləyirik
-      const sum = cart[index].qty * cart[index].price;
-      document.getElementById(`sum-${index}`).innerText = sum.toFixed(2);
-      
-      // Ümumi cəmi yenidən hesablayırıq
-      calculateGrandTotal();
-      localStorage.setItem('nelson_cart_final', JSON.stringify(cart));
-    }
-
-    function calculateGrandTotal() {
-      let total = 0, count = 0;
-      cart.forEach(item => {
-        total += (item.qty || 0) * item.price;
-        count += (item.qty || 0);
-      });
-      document.getElementById('total-price').innerText = total.toFixed(2);
-      document.getElementById('cart-badge-val') ? document.getElementById('cart-badge-val').innerText = count : '';
-      document.getElementById('cart-count').innerText = count;
+      let val = (newQty === "") ? 0 : parseInt(newQty);
+      cart[index].qty = isNaN(val) ? 0 : val;
+      updateUI();
     }
 
     function updateUI() {
       const list = document.getElementById('cart-items');
-      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted); font-size:13px;">Səbət boşdur</div>' : '';
+      const totalEl = document.getElementById('total-price');
+      const countEl = document.getElementById('cart-count');
       
+      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted);">Səbət boşdur</div>' : '';
+      
+      let total = 0, count = 0;
       cart.forEach((item, i) => {
         const itemSum = item.qty * item.price;
+        total += itemSum; count += item.qty;
         list.innerHTML += `
           <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
             <div style="flex:1;">
-              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text);">${item.name}</div>
-              <div style="font-size:12px; color:var(--muted); margin-top:4px; display:flex; align-items:center; gap:8px;">
-                <input type="number" class="cart-qty-input" value="${item.qty}" 
-                       oninput="updateItemQty(${i}, this.value)" 
-                       onclick="this.select()"> ədəd x ${item.price.toFixed(2)} AZN
+              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text); line-height:1.2;">${item.name}</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:8px; display:flex; align-items:center; gap:8px;">
+                <div class="qty-wrap" style="background:#222;">
+                    <button class="qty-btn" style="width:25px; height:30px;" onclick="changeQty(null,-1, true, ${i})">−</button>
+                    <input type="number" class="qty-input" style="width:35px; height:30px; font-size:14px;" value="${item.qty}" oninput="updateItemQty(${i}, this.value)" onfocus="this.select()">
+                    <button class="qty-btn" style="width:25px; height:30px;" onclick="changeQty(null,1, true, ${i})">+</button>
+                </div>
+                <span>x ${item.price.toFixed(2)} AZN</span>
               </div>
-              <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer; margin-top:8px; font-weight:700;">SİL ✕</button>
+              <button onclick="removeItem(${i})" class="remove-btn-large">SİL ✕</button>
             </div>
             <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:20px;">
-                <span id="sum-${i}">${itemSum.toFixed(2)}</span>
+                <span>${itemSum.toFixed(2)}</span>
             </div>
           </div>`;
       });
-      calculateGrandTotal();
+      
+      countEl.innerText = count;
+      totalEl.innerText = total.toFixed(2);
+      localStorage.setItem('nelson_cart_final', JSON.stringify(cart));
     }
 
     function toggleCart(open) {
