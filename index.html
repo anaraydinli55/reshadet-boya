@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nelson Boya — Professional Boya, Astar və Dolğu Kataloqu</title>
+  <title>Nelson Boya — Professional İnşaat Materialları Kataloqu</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
       --text:     #f0ece4;
       --muted:    #7a7672;
       --green:    #25d366;
+      --lightblue: #00d4ff;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -120,30 +121,66 @@
     .qty-wrap { display: flex; align-items: center; background: var(--panel); border: 1px solid var(--border); }
     .qty-btn { width: 34px; height: 42px; border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; }
     .qty-input { width: 44px; height: 42px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; }
-    .qty-input:focus { outline: none; }
 
     .add-btn { flex: 1; height: 42px; background: var(--gold); color: var(--ink); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; letter-spacing: 1px; transition: 0.3s; }
-    .add-btn:hover { background: #e0b955; }
+
+    /* FLOATING CONTROLS (RIGHT) */
+    .floating-controls {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .float-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+    }
+    .float-icon:hover { transform: scale(1.1); }
+
+    .music-float { 
+      background: var(--lightblue); 
+      color: white; 
+      font-size: 22px; 
+      animation: musicPulse 2s infinite;
+    }
+
+    @keyframes musicPulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+    }
+
+    .wa-float { background: var(--green); }
 
     /* SIDEBAR */
-    #sidebar { position: fixed; top: 0; right: -100%; width: 420px; height: 100dvh; background: var(--panel); z-index: 1000; display: flex; flex-direction: column; transition: 0.45s cubic-bezier(0.77, 0, 0.175, 1); border-left: 1px solid var(--border); }
+    #sidebar { position: fixed; top: 0; right: -100%; width: 420px; height: 100dvh; background: var(--panel); z-index: 1100; display: flex; flex-direction: column; transition: 0.45s cubic-bezier(0.77, 0, 0.175, 1); border-left: 1px solid var(--border); }
     #sidebar.active { right: 0; }
-    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 900; opacity: 0; pointer-events: none; transition: 0.4s; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1050; opacity: 0; pointer-events: none; transition: 0.4s; }
     .overlay.active { opacity: 1; pointer-events: all; }
 
     .cart-body { flex: 1; overflow-y: auto; padding: 20px 28px; }
     .sidebar-footer { padding: 20px 28px 28px; border-top: 1px solid var(--border); }
-    
-    .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-
-    /* WA FLOAT */
-    .wa-float { position: fixed; bottom: 30px; left: 30px; background: var(--green); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 800; box-shadow: 0 8px 24px rgba(37,211,102,0.3); transition: 0.3s; }
-    .wa-float:hover { transform: scale(1.1); }
+    .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; }
 
     @media (max-width: 768px) { #sidebar { width: 100%; } .hero { grid-template-columns: 1fr; padding: 40px 20px; } }
   </style>
 </head>
 <body>
+
+  <!-- Audio Element -->
+  <audio id="bgMusic" src="musiqi1.mpeg" loop></audio>
 
   <header>
     <div class="header-inner">
@@ -156,14 +193,14 @@
 
   <section class="hero">
     <div>
-      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:20px;">PREMİUM KATALOQ — 2026</div>
-      <h1>PROFESSİONAL<br><em>BOYA, DOLĞU</em>  <em>LAK, ASTAR</em> MƏHSULLARI</h1>
-      <p style="color:var(--muted); max-width:480px; margin-top:20px; font-weight:300;">Nelson brendinin yüksək texnologiyalı məhsulları ilə məkanlarınıza dəyər qatın. Azərbaycanın №1 inşaat boyası seçimi.</p>
+      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:20px;">PREMİUM KATALOQ — 2025</div>
+      <h1>PROFESSİONAL<br>BOYA VƏ <em>LAK</em> SİSTEMLƏRİ</h1>
+      <p style="color:var(--muted); max-width:480px; margin-top:20px; font-weight:300;">Nelson brendinin yüksək texnologiyalı məhsulları ilə məkanlarınıza dəyər qatın.</p>
     </div>
     <div class="hero-stats">
       <div style="text-align:right;">
         <div class="stat-num">16+</div>
-        <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Məhsul növü</div>
+        <div style="font-size:11px; color:var(--muted); text-transform:uppercase;">Məhsul növü</div>
       </div>
     </div>
   </section>
@@ -172,41 +209,44 @@
     <div class="grid" id="product-grid"></div>
   </main>
 
-  <footer style="padding: 40px 32px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 12px; letter-spacing: 1px;">
-    © 2026 NELSON BOYA. BÜTÜN HÜQUQLAR QORUNUR.
-  </footer>
+  <div class="floating-controls">
+    <!-- Music Button -->
+    <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()" title="Musiqi">
+      🎵
+    </button>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/994517279955?text=Salam!%20Nelson%20boya%20məhsulları%20ilə%20bağlı%20sifariş%20vermək%20istəyirəm." 
+       class="float-icon wa-float" target="_blank" title="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32">
+    </a>
+  </div>
 
   <div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
 
   <div id="sidebar">
     <div style="padding:28px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-      <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
+      <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px;">SİFARİŞ SƏBƏTİ</div>
       <button onclick="toggleCart(false)" style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
     </div>
     <div class="cart-body" id="cart-items"></div>
     <div class="sidebar-footer">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <span style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Ümumi yekun</span>
+        <span style="font-size:11px; color:var(--muted); text-transform:uppercase;">Ümumi yekun</span>
         <span style="font-family:'Barlow Condensed'; font-size:32px; font-weight:800; color:var(--gold);"><span id="total-price">0.00</span> AZN</span>
       </div>
       <button class="wa-order-btn" onclick="sendOrder()">WhatsApp ilə Sifariş Et</button>
     </div>
   </div>
 
-  <a href="https://wa.me/994517279955" class="wa-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32">
-  </a>
-
   <script>
-    // Şəkillərin yolları birbaşa ana qovluğa (root) uyğun olaraq 1.webp ... 16.webp kimi düzəldildi
     const products = [
       { id: 1,  name: "Nelsilikon Fasad (25kq)", desc: "Silikon əsaslı, xarici fasadlar üçün davamlı boya.", price: 88.00, img: "1.webp" },
-      { id: 2,  name: "Nelgloss Parlaq Boya", desc: "Metal və taxta üçün yüksək parlaqlıqlı enamel.", price: 140.00, img: "2.webp" },
+      { id: 2,  name: "Nelgloss Parlaq Boya", desc: "Metal və taxta üçün yüksək parlaqlıqlı enamel.", price: 16.50, img: "2.webp" },
       { id: 3,  name: "Nelson Akrilik Macunu", desc: "Səth hamarlaşdıran professional dolğu.", price: 23.00, img: "3.webp" },
       { id: 4,  name: "Nelsilikon Fasad (15L)", desc: "Xarici divarlar üçün silikonlu boya.", price: 62.00, img: "4.webp" },
       { id: 5,  name: "Nelplastik Divar Boyası", desc: "Daxili məkanlar üçün mat daxili divar boyası.", price: 44.00, img: "5.webp" },
       { id: 6,  name: "Nelakril Xarici Divar", desc: "Atmosfer şəraitinə davamlı akrilik boya.", price: 56.00, img: "6.webp" },
-      { id: 7,  name: "Nelplus Yuyulan Boya", desc: "Ləkə saxlamayan premium daxili boya.", price: 72.00, img: "7.webp" },
+      { id: 7,  name: "Nelplus Yuyulan Boya", desc: "Ləkə saxlamayan premium daxili divar boyası.", price: 72.00, img: "7.webp" },
       { id: 8,  name: "Neltavan Tavan Boyası", desc: "Yüksək bəyazlıqlı mat tavan boyası.", price: 29.00, img: "8.webp" },
       { id: 9,  name: "Sintetik Antipas Boya", desc: "Paslanmaya qarşı qoruyucu metal astarı.", price: 12.00, img: "9.webp" },
       { id: 10, name: "Professional Parket Lakı", desc: "Cızılmaya davamlı parlaq parket lakı.", price: 19.50, img: "10.webp" },
@@ -219,6 +259,7 @@
     ];
 
     let cart = JSON.parse(localStorage.getItem('nelson_cart_final')) || [];
+    let audioInitiated = false;
 
     function renderProducts() {
       const grid = document.getElementById('product-grid');
@@ -234,10 +275,10 @@
             <div class="card-footer">
               <div class="qty-wrap">
                 <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
-                <input type="number" class="qty-input" id="qty-${p.id}" value="1" min="1">
+                <input type="number" class="qty-input" id="qty-${p.id}" value="1">
                 <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
               </div>
-              <button class="add-btn" onclick="addToCart(${p.id})">Səbətə at</button>
+              <button class="add-btn" onclick="addToCart(${p.id})">Əlavə et</button>
             </div>
           </div>`;
       });
@@ -250,13 +291,9 @@
 
     function addToCart(pid) {
       const p = products.find(x => x.id === pid);
-      const qtyInput = document.getElementById(`qty-${pid}`);
-      const qty = parseInt(qtyInput.value) || 1;
-      
+      const qty = parseInt(document.getElementById(`qty-${pid}`).value) || 1;
       const found = cart.find(x => x.id === pid);
       if(found) found.qty += qty; else cart.push({...p, qty});
-      
-      qtyInput.value = 1; // Reset input
       updateUI();
       toggleCart(true);
     }
@@ -267,9 +304,7 @@
       const list = document.getElementById('cart-items');
       const totalEl = document.getElementById('total-price');
       const countEl = document.getElementById('cart-count');
-      
-      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted); font-size:13px;">Səbət boşdur</div>' : '';
-      
+      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted);">Səbət boşdur</div>' : '';
       let total = 0, count = 0;
       cart.forEach((item, i) => {
         const sum = item.price * item.qty;
@@ -277,14 +312,13 @@
         list.innerHTML += `
           <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
             <div style="flex:1;">
-              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text);">${item.name}</div>
-              <div style="font-size:12px; color:var(--muted); margin-top:4px;">${item.qty} ədəd x ${item.price.toFixed(2)} AZN</div>
-              <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer; margin-top:8px; font-weight:700;">SİL ✕</button>
+              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase;">${item.name}</div>
+              <div style="font-size:12px; color:var(--muted);">${item.qty} ədəd x ${item.price.toFixed(2)} AZN</div>
+              <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer;">SİL ✕</button>
             </div>
             <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:18px;">${sum.toFixed(2)}</div>
           </div>`;
       });
-      
       countEl.innerText = count;
       totalEl.innerText = total.toFixed(2);
       localStorage.setItem('nelson_cart_final', JSON.stringify(cart));
@@ -306,6 +340,28 @@
       txt += `*ÜMUMİ YEKUN MƏBLƏĞ: ${total.toFixed(2)} AZN*`;
       window.open(`https://wa.me/994517279955?text=${encodeURIComponent(txt)}`, '_blank');
     }
+
+    // Musiqi Funksiyası
+    const music = document.getElementById('bgMusic');
+    
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        document.getElementById('musicBtn').innerText = '⏸️';
+      } else {
+        music.pause();
+        document.getElementById('musicBtn').innerText = '🎵';
+      }
+    }
+
+    // Avtomatik başlama (Scroll və ya klik zamanı brauzer qorumasını aşmaq üçün)
+    window.addEventListener('scroll', () => {
+      if (!audioInitiated) {
+        music.play().catch(e => console.log("Musiqi üçün klik lazımdır."));
+        audioInitiated = true;
+        document.getElementById('musicBtn').innerText = '⏸️';
+      }
+    }, { once: true });
 
     window.onload = () => { renderProducts(); updateUI(); };
   </script>
