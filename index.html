@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nelson Boya — Professional İnşaat Materialları Kataloqu</title>
+  <title>Nelson Boya — Professional Boya, Astar və Dolğu Kataloqu</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       --text:     #f0ece4;
       --muted:    #7a7672;
       --green:    #25d366;
-      --lightblue: #00d4ff;
+      --music-blue: #00d4ff;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +44,6 @@
       opacity: 0.4;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -89,7 +88,6 @@
 
     .cart-badge { background: var(--gold); color: var(--ink); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
-    /* HERO */
     .hero {
       max-width: 1280px; margin: 0 auto; padding: 80px 32px 60px;
       display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end;
@@ -99,11 +97,9 @@
     .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(42px, 6vw, 80px); font-weight: 800; line-height: 0.95; text-transform: uppercase; }
     .hero h1 em { color: var(--gold); font-style: normal; display: block; }
 
-    /* GRID */
     main { max-width: 1280px; margin: 0 auto; padding: 60px 32px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 2px; }
 
-    /* CARD */
     .card { background: var(--card); display: flex; flex-direction: column; position: relative; overflow: hidden; transition: 0.3s; }
     .card:hover { background: #222; }
     .card-img { width: 100%; aspect-ratio: 1/1; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: hidden; }
@@ -111,13 +107,12 @@
     .card:hover .card-img img { transform: scale(1.06); }
 
     .card-body { padding: 20px 20px 0; flex-grow: 1; }
-    .card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: var(--text); }
+    .card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: var(--text); height: 44px; overflow: hidden; }
     .card-desc { font-size: 12.5px; color: var(--muted); min-height: 38px; line-height: 1.4; }
     .card-price { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; color: var(--gold); margin-top: 14px; }
     
     .card-footer { padding: 16px 20px 20px; display: flex; gap: 8px; }
 
-    /* QTY */
     .qty-wrap { display: flex; align-items: center; background: var(--panel); border: 1px solid var(--border); }
     .qty-btn { width: 34px; height: 42px; border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; }
     .qty-input { width: 44px; height: 42px; border: none; background: transparent; color: var(--text); text-align: center; font-weight: 600; }
@@ -146,13 +141,14 @@
       cursor: pointer;
       transition: 0.3s;
       border: none;
+      text-decoration: none;
     }
     .float-icon:hover { transform: scale(1.1); }
 
     .music-float { 
-      background: var(--lightblue); 
+      background: var(--music-blue); 
       color: white; 
-      font-size: 22px; 
+      font-size: 24px; 
       animation: musicPulse 2s infinite;
     }
 
@@ -179,7 +175,6 @@
 </head>
 <body>
 
-  <!-- Audio Element -->
   <audio id="bgMusic" src="musiqi1.mpeg" loop></audio>
 
   <header>
@@ -193,14 +188,14 @@
 
   <section class="hero">
     <div>
-      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:20px;">PREMİUM KATALOQ — 2025</div>
-      <h1>PROFESSİONAL<br>BOYA VƏ <em>LAK</em> SİSTEMLƏRİ</h1>
+      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:20px;">PREMİUM KATALOQ — 2026</div>
+      <h1>PROFESSİONAL<br><em>BOYA, DOLĞU</em> <em>LAK, ASTAR</em> MƏHSULLARI</h1>
       <p style="color:var(--muted); max-width:480px; margin-top:20px; font-weight:300;">Nelson brendinin yüksək texnologiyalı məhsulları ilə məkanlarınıza dəyər qatın.</p>
     </div>
     <div class="hero-stats">
       <div style="text-align:right;">
-        <div class="stat-num">16+</div>
-        <div style="font-size:11px; color:var(--muted); text-transform:uppercase;">Məhsul növü</div>
+        <div style="font-family:'Barlow Condensed'; font-size:48px; font-weight:800; color:var(--gold); line-height:1;">16+</div>
+        <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Məhsul növü</div>
       </div>
     </div>
   </section>
@@ -210,14 +205,10 @@
   </main>
 
   <div class="floating-controls">
-    <!-- Music Button -->
-    <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()" title="Musiqi">
-      🎵
-    </button>
-    <!-- WhatsApp Button -->
+    <button class="float-icon music-float" id="musicBtn" onclick="toggleMusic()" title="Musiqi">🎵</button>
     <a href="https://wa.me/994517279955?text=Salam!%20Nelson%20boya%20məhsulları%20ilə%20bağlı%20sifariş%20vermək%20istəyirəm." 
        class="float-icon wa-float" target="_blank" title="WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32" alt="WA">
     </a>
   </div>
 
@@ -225,13 +216,13 @@
 
   <div id="sidebar">
     <div style="padding:28px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-      <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px;">SİFARİŞ SƏBƏTİ</div>
+      <div style="font-family:'Barlow Condensed'; font-size:20px; letter-spacing:3px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
       <button onclick="toggleCart(false)" style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
     </div>
     <div class="cart-body" id="cart-items"></div>
     <div class="sidebar-footer">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <span style="font-size:11px; color:var(--muted); text-transform:uppercase;">Ümumi yekun</span>
+        <span style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px;">Ümumi yekun</span>
         <span style="font-family:'Barlow Condensed'; font-size:32px; font-weight:800; color:var(--gold);"><span id="total-price">0.00</span> AZN</span>
       </div>
       <button class="wa-order-btn" onclick="sendOrder()">WhatsApp ilə Sifariş Et</button>
@@ -239,23 +230,24 @@
   </div>
 
   <script>
+    // Qeyd: Qiymətlər rəqəm formatında olmalıdır (məsələn: 0.00). Səhv format səhifəni dondurur.
     const products = [
-      { id: 1,  name: "Nelbinder Akrilik Astar (1LT)", desc: "Silikon əsaslı, xarici fasadlar üçün davamlı boya.", price: 6.00, img: "1.webp" },
-      { id: 2,  name: "Nelastar Silikonlu Astar", desc: "Metal və taxta üçün yüksək parlaqlıqlı enamel.", price: 27.00, img: "2.webp" },
-      { id: 3,  name: "Nelson Sintetik Parlaq Boya", desc: "Səth hamarlaşdıran professional dolğu.", price: 14.50, img: "3.webp" },
-      { id: 4,  name: "Nelson Sintetik Antipas Boya", desc: "Xarici divarlar üçün silikonlu boya.", price: 10.70, img: "4.webp" },
-      { id: 5,  name: "Nelson Sellülozik Dolğu Lakı", desc: "Daxili məkanlar üçün mat daxili divar boyası.", price: 15.00, img: "5.webp" },
-      { id: 6,  name: "Nelson Sintetik Parlaq Parket Lakı", desc: "Atmosfer şəraitinə davamlı akrilik boya.", price: 14.00, img: "6.webp" },
-      { id: 7,  name: "Nelson Sintetik Antipas Boya", desc: "Ləkə saxlamayan premium daxili divar boyası.", price: 10.70, img: "7.webp" },
-      { id: 8,  name: "Nelson Sintetik Parlaq Boya", desc: "Yüksək bəyazlıqlı mat tavan boyası.", price: 00.00, img: "8.webp" },
-      { id: 9,  name: "Neltavan Tavan Boyası", desc: "Paslanmaya qarşı qoruyucu metal astarı.", price: 29.00, img: "9.webp" },
-      { id: 10, name: "Nelplus Yuyula Bilən Plastik Boya", desc: "Cızılmaya davamlı parlaq parket lakı.", price: 28.00, img: "10.webp" },
-      { id: 11, name: "Nelakril Xarici Divar Boyası", desc: "Professional dekorativ sintetik boya.", price: 17.00, img: "11.webp" },
-      { id: 12, name: "Nelplastik Daxili Divar Boyası", desc: "Tez quruyan taxta və mebel dolğusu.", price: 00.00, img: "12.webp" },
-      { id: 13, name: "Nelson Silikon Əsaslı Fasad Boyası", desc: "Metallar üçün pas əleyhinə astar qrunt.", price: 00.00,  img: "13.webp" },
-      { id: 14, name: "Nelson Akrilik Macunu", desc: "Sintetik əsaslı parlaq enamel boya.", price: 00.00, img: "14.webp" },
-      { id: 15, name: "Nelgloss Parlaq Boya", desc: "Boya sərfiini azaldan silikonlu qrunt.", price: 140.00, img: "15.webp" },
-      { id: 16, name: "Nelson Silikon Əsaslı Fasad Boyası", desc: "Şəffaf akrilik binder/astar.", price: 00.00, img: "16.webp" }
+      { id: 1,  name: "Nelbinder Akrilik Astar (1LT)", desc: "Səth hazırlığı üçün yüksək yapışma qabiliyyətli astar.", price: 6.00, img: "1.webp" },
+      { id: 2,  name: "Nelastar Silikonlu Astar", desc: "Boya sərfiini azaldan silikonlu daxili/xarici qrunt.", price: 27.00, img: "2.webp" },
+      { id: 3,  name: "Nelson Sintetik Parlaq Boya", desc: "Metal və taxta üçün dekorativ parlaq boya.", price: 14.50, img: "3.webp" },
+      { id: 4,  name: "Nelson Sintetik Antipas Boya", desc: "Metalı pasdan qoruyan antikorroziv professional astar.", price: 10.70, img: "4.webp" },
+      { id: 5,  name: "Nelson Sellülozik Dolğu Lakı", desc: "Taxta məsamələrini tam dolduran tez quruyan dolğu.", price: 15.00, img: "5.webp" },
+      { id: 6,  name: "Nelson Sintetik Parlaq Parket Lakı", desc: "Döşəmələr üçün cızılmaya davamlı parlaq parket lakı.", price: 14.00, img: "6.webp" },
+      { id: 7,  name: "Nelson Sintetik Antipas Boya (Böyük)", desc: "Pas əleyhinə yüksək müdafiə qabiliyyətli boya.", price: 10.70, img: "7.webp" },
+      { id: 8,  name: "Nelson Sintetik Parlaq Boya (Universal)", desc: "Həm daxili həm xarici səthlər üçün parlaq boya.", price: 14.50, img: "8.webp" },
+      { id: 9,  name: "Neltavan Tavan Boyası", desc: "Tavanlar üçün ultra bəyaz, qoxusuz mat boya.", price: 29.00, img: "9.webp" },
+      { id: 10, name: "Nelplus Yuyula Bilən Plastik Boya", desc: "Ləkə saxlamayan, asan silinən premium daxili boya.", price: 28.00, img: "10.webp" },
+      { id: 11, name: "Nelakril Xarici Divar Boyası", desc: "Atmosfer şəraitinə davamlı fasad boyası.", price: 17.00, img: "11.webp" },
+      { id: 12, name: "Nelplastik Daxili Divar Boyası", desc: "Tənəffüs edən, dekorativ mat daxili divar boyası.", price: 44.00, img: "12.webp" },
+      { id: 13, name: "Nelson Silikon Əsaslı Fasad Boyası", desc: "Yağışa və günəşə davamlı silikonlu boya.", price: 62.00,  img: "13.webp" },
+      { id: 14, name: "Nelson Akrilik Macunu", desc: "Divar nahamarlıqlarını hamarlaşdıran dolğu.", price: 23.00, img: "14.webp" },
+      { id: 15, name: "Nelgloss Parlaq Boya (Premium)", desc: "Premium dərəcəli yüksək parlaqlıqlı enamel boya.", price: 140.00, img: "15.webp" },
+      { id: 16, name: "Nelson Silikon Əsaslı Fasad (Böyük)", desc: "Böyük həcmli, yüksək örtücülü fasad boyası.", price: 88.00, img: "16.webp" }
     ];
 
     let cart = JSON.parse(localStorage.getItem('nelson_cart_final')) || [];
@@ -263,10 +255,11 @@
 
     function renderProducts() {
       const grid = document.getElementById('product-grid');
+      grid.innerHTML = "";
       products.forEach(p => {
         grid.innerHTML += `
           <div class="card">
-            <div class="card-img"><img src="${p.img}" onerror="this.src='https://placehold.co/400x400/ffffff/000000?text=${p.id}'"></div>
+            <div class="card-img"><img src="${p.img}" onerror="this.src='https://placehold.co/400x400/ffffff/000000?text=Nelson'"></div>
             <div class="card-body">
               <div class="card-name">${p.name}</div>
               <div class="card-desc">${p.desc}</div>
@@ -275,10 +268,10 @@
             <div class="card-footer">
               <div class="qty-wrap">
                 <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
-                <input type="number" class="qty-input" id="qty-${p.id}" value="1">
+                <input type="number" class="qty-input" id="qty-${p.id}" value="1" min="1">
                 <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
               </div>
-              <button class="add-btn" onclick="addToCart(${p.id})">Əlavə et</button>
+              <button class="add-btn" onclick="addToCart(${p.id})">Səbətə at</button>
             </div>
           </div>`;
       });
@@ -286,14 +279,17 @@
 
     function changeQty(id, delta) {
       const el = document.getElementById(`qty-${id}`);
-      el.value = Math.max(1, parseInt(el.value || 1) + delta);
+      let val = parseInt(el.value) || 1;
+      el.value = Math.max(1, val + delta);
     }
 
     function addToCart(pid) {
       const p = products.find(x => x.id === pid);
-      const qty = parseInt(document.getElementById(`qty-${pid}`).value) || 1;
+      const qtyInput = document.getElementById(`qty-${pid}`);
+      const qty = parseInt(qtyInput.value) || 1;
       const found = cart.find(x => x.id === pid);
       if(found) found.qty += qty; else cart.push({...p, qty});
+      qtyInput.value = 1;
       updateUI();
       toggleCart(true);
     }
@@ -304,7 +300,7 @@
       const list = document.getElementById('cart-items');
       const totalEl = document.getElementById('total-price');
       const countEl = document.getElementById('cart-count');
-      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted);">Səbət boşdur</div>' : '';
+      list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px; color:var(--muted); font-size:13px;">Səbət boşdur</div>' : '';
       let total = 0, count = 0;
       cart.forEach((item, i) => {
         const sum = item.price * item.qty;
@@ -312,9 +308,9 @@
         list.innerHTML += `
           <div style="display:flex; gap:15px; padding:15px 0; border-bottom:1px solid var(--border);">
             <div style="flex:1;">
-              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase;">${item.name}</div>
-              <div style="font-size:12px; color:var(--muted);">${item.qty} ədəd x ${item.price.toFixed(2)} AZN</div>
-              <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer;">SİL ✕</button>
+              <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:15px; text-transform:uppercase; color:var(--text);">${item.name}</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:4px;">${item.qty} ədəd x ${item.price.toFixed(2)} AZN</div>
+              <button onclick="removeItem(${i})" style="background:none; border:none; color:#ff4d4d; font-size:10px; cursor:pointer; margin-top:8px; font-weight:700;">SİL ✕</button>
             </div>
             <div style="font-family:'Barlow Condensed'; font-weight:700; color:var(--gold); font-size:18px;">${sum.toFixed(2)}</div>
           </div>`;
@@ -341,25 +337,25 @@
       window.open(`https://wa.me/994517279955?text=${encodeURIComponent(txt)}`, '_blank');
     }
 
-    // Musiqi Funksiyası
     const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
     
     function toggleMusic() {
       if (music.paused) {
         music.play();
-        document.getElementById('musicBtn').innerText = '⏸️';
+        musicBtn.innerText = '⏸️';
       } else {
         music.pause();
-        document.getElementById('musicBtn').innerText = '🎵';
+        musicBtn.innerText = '🎵';
       }
     }
 
-    // Avtomatik başlama (Scroll və ya klik zamanı brauzer qorumasını aşmaq üçün)
     window.addEventListener('scroll', () => {
       if (!audioInitiated) {
-        music.play().catch(e => console.log("Musiqi üçün klik lazımdır."));
+        music.play().then(() => {
+          musicBtn.innerText = '⏸️';
+        }).catch(e => console.log("Səsdən öncə interaksiya lazımdır"));
         audioInitiated = true;
-        document.getElementById('musicBtn').innerText = '⏸️';
       }
     }, { once: true });
 
