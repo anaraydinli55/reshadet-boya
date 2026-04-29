@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -90,19 +89,35 @@
 
     .cart-badge { background: var(--gold); color: var(--ink); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
 
-    .ad-section { margin-bottom: 15px; padding-top: 5px; text-align: left; }
-    .btn-boyalar {
-      display: inline-flex;
-      align-items: center;
-      background-color: var(--viktoria-purple);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 6px 6px 6px 15px;
-      border-radius: 50px;
-      box-shadow: 0 4px 0 #7c3aed, 0 6px 12px rgba(120, 40, 200, 0.35);
-      transition: all 0.15s ease;
+    /* MÜŞTƏRİ ADI BÖLMƏSİ STİLİ */
+    .customer-info-area {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(201, 168, 76, 0.05);
+    }
+    .customer-info-area label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .customer-input {
+      width: 100%;
+      padding: 12px;
+      background: #222;
+      border: 1px solid var(--border);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+    }
+    .customer-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
     }
 
     .hero {
@@ -157,10 +172,6 @@
     .wa-order-btn { width: 100%; padding: 18px; background: var(--green); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; cursor: pointer; font-size: 16px; letter-spacing: 2px; }
     .clear-cart-btn { width: 100%; margin-top: 10px; padding: 10px; background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; cursor: pointer; border-radius: 2px; }
 
-    .cart-qty-input { width: 55px; background: #222; border: 1px solid var(--gold); color: var(--text); text-align: center; border-radius: 4px; padding: 5px; font-weight: bold; font-family: 'Barlow Condensed'; font-size: 20px; outline: none; }
-    .remove-btn-large { color: #ff4d4d; font-weight: 900; font-size: 16px; cursor: pointer; border: none; background: none; margin-top: 12px; text-transform: uppercase; }
-
-    /* Səbətdəki vahid qiymət stili (YENİLƏNDİ) */
     .cart-unit-price {
         color: #ffffff;
         font-weight: 900;
@@ -177,7 +188,6 @@
     .floating-controls { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
     .float-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); cursor: pointer; transition: 0.3s; border: none; text-decoration: none; }
     .music-float { background: var(--music-blue); color: white; font-size: 24px; animation: musicPulse 2s infinite; }
-    @keyframes musicPulse { 0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); } }
     .wa-float { background: var(--green); }
 
     @media (max-width: 768px) { #sidebar { width: 100%; } main, .hero { max-width: 100%; } }
@@ -196,10 +206,11 @@
     </div>
   </header>
 
+  <!-- ... (Hero və Main bölmələri eyni qalır) ... -->
   <section class="hero">
     <div class="ad-section">
       <div style="font-size: 9px; color: var(--music-blue); text-transform: lowercase; letter-spacing: 1px; margin-bottom: 2px;">google reklam</div>
-      <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar">
+      <a href="https://viktoria-az.store" target="_blank" class="btn-boyalar" style="text-decoration:none;">
         Viktoria Paltar Boyaları <span style="margin-left:10px;">»</span>
       </a>
     </div>
@@ -223,12 +234,21 @@
 
   <div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
 
+  <!-- SƏBƏT (SIDEBAR) -->
   <div id="sidebar">
     <div style="padding:28px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
       <div style="font-family:'Barlow Condensed'; font-size:22px; letter-spacing:2px; font-weight:700;">SİFARİŞ SƏBƏTİ</div>
       <button class="sidebar-back-btn" onclick="toggleCart(false)">← GERİ</button>
     </div>
+
+    <!-- MÜŞTƏRİ ADI GİRİŞİ -->
+    <div class="customer-info-area">
+      <label for="cust-name">Adınız və Soyadınız:</label>
+      <input type="text" id="cust-name" class="customer-input" placeholder="Məsələn: Əhməd Məmmədov" oninput="saveCustomerName(this.value)">
+    </div>
+
     <div class="cart-body" id="cart-items"></div>
+    
     <div class="sidebar-footer">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
         <span style="font-size:11px; color:var(--muted); text-transform:uppercase;">Ümumi yekun</span>
@@ -268,6 +288,11 @@
 
     let cart = JSON.parse(localStorage.getItem('nelson_cart_final')) || [];
     let audioInitiated = false;
+
+    // Adı yadda saxla
+    function saveCustomerName(val) {
+        localStorage.setItem('nelson_customer_name', val);
+    }
 
     function renderProducts() {
       const grid = document.getElementById('product-grid');
@@ -381,15 +406,35 @@
       document.body.style.overflow = open ? 'hidden' : '';
     }
 
+    // WHATSAPPA SİFARİŞ GÖNDƏRİLMƏSİ (YENİLƏNDİ)
     function sendOrder() {
+      const customerName = document.getElementById('cust-name').value.trim();
+      
+      if(!customerName) {
+          alert("Zəhmət olmasa Adınızı və Soyadınızı daxil edin!");
+          document.getElementById('cust-name').focus();
+          return;
+      }
+      
       if(!cart.length) return alert("Səbətiniz boşdur!");
-      let txt = "*YENİ SİFARİŞ — NELSON BOYA*\n\n";
+
+      let txt = `*YENİ SİFARİŞ — NELSON BOYA*\n`;
+      txt += `👤 *Müştəri:* ${customerName}\n`;
+      txt += `--------------------------------\n\n`;
+      
       let total = 0;
       cart.forEach((it, i) => {
-        const s = it.price * it.qty; total += s;
-        txt += `${i+1}. *${it.name}*\n   Miqdar: ${it.qty} ədəd\n   Cəm: ${s.toFixed(2)} AZN\n\n`;
+        const s = it.price * it.qty; 
+        total += s;
+        txt += `${i+1}. *${it.name}*\n`;
+        txt += `   Miqdar: ${it.qty} ədəd\n`;
+        txt += `   Qiymət: ${it.price.toFixed(2)} AZN\n`;
+        txt += `   Cəm: ${s.toFixed(2)} AZN\n\n`;
       });
+      
+      txt += `--------------------------------\n`;
       txt += `*ÜMUMİ YEKUN MƏBLƏĞ: ${total.toFixed(2)} AZN*`;
+      
       window.open(`https://wa.me/994517279955?text=${encodeURIComponent(txt)}`, '_blank');
     }
 
@@ -407,7 +452,13 @@
       }
     }, { once: true });
 
-    window.onload = () => { renderProducts(); updateUI(); };
+    window.onload = () => { 
+        renderProducts(); 
+        updateUI(); 
+        // Yadda qalan adı geri qaytar
+        const savedName = localStorage.getItem('nelson_customer_name');
+        if(savedName) document.getElementById('cust-name').value = savedName;
+    };
   </script>
 </body>
 </html>
